@@ -149,6 +149,7 @@ const ExpenseTracker = () => {
         />
         <PieChartComponent data={calculateSummary()} colors={categoryColors} />
       </div>
+
       <div className={styles.bottom}>
         <div className={styles.transaction}>
           <RecentTransactions
