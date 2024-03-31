@@ -3,6 +3,7 @@ import { useState } from "react";
 import Balance from "./Balance";
 import Expenses from "./Expenses";
 import styles from "./Card.module.css";
+
 const Card = ({
   heading,
   figure,
@@ -11,14 +12,19 @@ const Card = ({
   buttonColor,
   figureColor,
   addExpense,
-  totalExpenses,
   addIncome,
+  editExpense, // Make sure to receive the editExpense prop
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const openModal = () => {
     setIsModalOpen(true);
   };
-  const closeModal = () => setIsModalOpen(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className={styles.card}>
       <h4>
@@ -48,6 +54,7 @@ const Card = ({
           isOpen={isModalOpen}
           closeModal={closeModal}
           addExpense={addExpense}
+          editExpense={editExpense} // Pass the editExpense prop to Expenses component
         />
       )}
     </div>

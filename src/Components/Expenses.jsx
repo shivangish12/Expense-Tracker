@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import styles from "./Expenses.module.css";
 
-const Expenses = ({ isOpen, closeModal, addExpense }) => {
+const Expenses = ({
+  isOpen,
+  closeModal,
+  addExpense,
+  initialData,
+  editExpense,
+}) => {
   const [expenseData, setExpenseData] = useState({
     title: "",
     price: "",
     category: "",
     date: "",
   });
+
+  // Update the expenseData when initialData changes
+  useEffect(() => {
+    if (initialData) {
+      setExpenseData(initialData);
+    }
+  }, [initialData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +37,12 @@ const Expenses = ({ isOpen, closeModal, addExpense }) => {
       expenseData.date
     ) {
       // Call addExpense function with the expense data
-      addExpense(expenseData);
+      if (initialData) {
+        // If initialData exists, it means we're editing
+        editExpense(expenseData); // Call editExpense instead of addExpense
+      } else {
+        addExpense(expenseData);
+      }
       // Close the modal
       closeModal();
     } else {
@@ -50,7 +68,7 @@ const Expenses = ({ isOpen, closeModal, addExpense }) => {
         },
       }}
     >
-      <h4>Add Expenses</h4>
+      <h2>{initialData ? "Edit Expense" : "Add Expense"}</h2>
       <div className={styles.form}>
         <input
           className={styles.input}
@@ -84,14 +102,12 @@ const Expenses = ({ isOpen, closeModal, addExpense }) => {
         <input
           className={styles.input}
           type="date"
-          id="dateInput"
-          pattern="\d{2}/\d{2}/\d{4}"
           name="date"
           value={expenseData.date}
           onChange={handleChange}
         />
         <button className={styles.expenseButton} onClick={handleSubmit}>
-          Add Expense
+          {initialData ? "Update Expense" : "Add Expense"}
         </button>
         <button className={styles.cancelButton} onClick={closeModal}>
           Cancel
