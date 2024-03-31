@@ -1,0 +1,35 @@
+.card {
+  width: 355.41px;
+  height: 181px;
+  top: 140px;
+  left: 90px;
+  border-radius: 15px;
+  opacity: 0px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background-color: grey;
+}
+
+.head {
+  color: white;
+  font-family: Ubuntu;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 34.47px;
+  text-align: left;
+}
+.amount {
+  font-family: Ubuntu;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 34.47px;
+  text-align: left;
+}
+button {
+  width: 167.65px;
+  height: 38px;
+  top: 245px;
+  left: 588.47px;
+  gap: 0px;
+  border-radius: 15px;
+  opacity: 0px;
+}

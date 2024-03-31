@@ -1,0 +1,52 @@
+.modal {
+  width: 538px;
+  height: 164px;
+  top: 296px;
+  left: 371px;
+  border-radius: 15px;
+  opacity: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #efefefd9;
+}
+h4 {
+  font-family: Ubuntu;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 34.47px;
+  text-align: left;
+}
+
+.cancelButton {
+  width: 112px;
+  height: 51px;
+  top: 379px;
+  left: 791px;
+  border-radius: 15px;
+  opacity: 0px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.balanceButton {
+  background: linear-gradient(0deg, #f4bb4a, #f4bb4a);
+  width: 145px;
+  height: 51px;
+  top: 378px;
+  left: 630px;
+  border-radius: 15px;
+  opacity: 0px;
+}
+.input {
+  width: 217px;
+  height: 51px;
+  top: 377px;
+  left: 401px;
+  border-radius: 15px;
+  opacity: 0px;
+}
+
+.details {
+  display: flex;
+  gap: 10px;
+}
