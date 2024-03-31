@@ -1,30 +1,31 @@
+.total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
 .tracker {
   background-color: #9b9b9b;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 100%; /* Adjust width to fill the container */
-  max-width: 1211px; /* Limit maximum width */
+  width: 1211px;
   height: 269px;
+  top: 94px;
+  right: 32px;
   border-radius: 10px;
-  opacity: 1; /* Change opacity to make it visible */
+  opacity: 0px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  margin-left: 50px;
+  margin-left: 150px;
 }
-
-.total {
-  display: grid;
-  grid-template-rows: auto auto; /* Two rows, first row for tracker, second row for recent transactions and bar graph */
-  gap: 20px; /* Gap between rows */
-}
-
 .bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px; /* Add gap between recent transactions and bar graph */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-
-/* Adjustments for RecentTransactions and BarGraphComponent */
-.bottom > div {
-  width: 100%; /* Ensure both components take full width */
+.bar {
+  margin-right: 70px;
+  margin-left: 300px;
 }

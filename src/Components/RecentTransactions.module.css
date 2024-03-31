@@ -1,13 +1,12 @@
 .transaction {
   width: 738px;
   height: 345.03px;
-  margin-left: 50px;
   border: 1px;
   opacity: 0px;
   background-color: white;
   position: relative;
   border-radius: 5px;
-  padding-left: 50px;
+  left: 220px;
 }
 
 .details {
