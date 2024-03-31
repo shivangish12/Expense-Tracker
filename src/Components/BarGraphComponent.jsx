@@ -1,41 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { BarChart, Bar, YAxis, Tooltip } from "recharts";
+import React from "react";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import styles from "./BarGraphComponent.module.css";
 
-const BarGraphComponent = ({ data, fillColor }) => {
-  const [chartData, setChartData] = useState(data);
-
-  useEffect(() => {
-    setChartData(data);
-  }, [data]);
-
-  const graphContainerStyle = {
-    backgroundColor: "#f5f5f5",
-    padding: "20px",
-    borderRadius: "8px",
-    width: "450px",
-  };
-
+const BarGraphComponent = ({ data }) => {
   return (
-    <div style={graphContainerStyle}>
+    <div className={styles.bar}>
       <BarChart
         width={400}
         height={300}
-        data={chartData}
+        data={data}
         layout="vertical"
-        margin={{ top: 20, right: 30, left: 50, bottom: 5 }}
+        margin={{ top: 40, left: 40 }}
       >
-        <YAxis
-          dataKey="category"
-          type="category"
-          tick={{ fill: "black" }}
-          axisLine={false}
-        />
+        <XAxis type="number" axisLine={false} display="none" />
+        <YAxis dataKey="category" type="category" axisLine={false} />
         <Tooltip />
-        <Bar dataKey="value" fill={fillColor}>
-          {chartData.map((entry, index) => (
-            <Bar key={`bar-${index}`} />
-          ))}
-        </Bar>
+        <Bar dataKey="value" fill="#8784D2" barSize={20} />
       </BarChart>
     </div>
   );
